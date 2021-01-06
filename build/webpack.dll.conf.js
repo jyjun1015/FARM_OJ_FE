@@ -42,6 +42,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
+      
       'process.env': NODE_ENV === 'production' ? config.build.env : config.dev.env
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),

@@ -30,7 +30,7 @@ bower_components
 .lock-wscript
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
-**/*.js
+# **/*.js
 !dist/
 
 # Dependency directories
@@ -66,6 +66,6 @@ typings/
 test.vue
 
 # build
-vendor-manifest.json
-vendor.dll*.js
+# vendor-manifest.json
+# vendor.dll*.js
 
