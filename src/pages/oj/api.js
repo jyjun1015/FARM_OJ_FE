@@ -3,7 +3,7 @@ import store from '@/store'
 import axios from 'axios'
 
 Vue.prototype.$http = axios
-axios.defaults.baseURL = 'https://112.171.27.2:8080'
+axios.defaults.baseURL = '/api'
 axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 axios.defaults.xsrfCookieName = 'csrftoken'
 
