@@ -42,8 +42,6 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-
-      
       'process.env': NODE_ENV === 'production' ? config.build.env : config.dev.env
       
     }),
@@ -62,5 +60,3 @@ module.exports = {
   ]
 };
 
-
-console.log("daw;d;wa;dwdawdawiojwoihehfjsdjk","process.env :", process.env,'NODE_ENV :', NODE_ENV)

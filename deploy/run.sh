@@ -1,6 +1,6 @@
 #!/bin/sh
 
-base=/OJ_FE
+base=/FARM_OJ_FE
 
 build_vendor_dll()
 {
@@ -19,4 +19,4 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-exec nginx -c /OJ_FE/deploy/nginx.conf
+exec nginx -c /FARM_OJ_FE/deploy/nginx.conf

@@ -2,6 +2,8 @@
 // Template version: 1.1.1
 // see http://vuejs-templates.github.io/webpack for documentation.
 
+process.env.TARGET='http://localhost:80/'
+
 const path = require('path')
 const commonProxy = {
   onProxyReq: (proxyReq, req, res) => {
@@ -18,9 +20,17 @@ module.exports = {
     ojTemplate: path.resolve(__dirname, '../src/pages/oj/index.html'),
     adminIndex: path.resolve(__dirname, '../dist/admin/index.html'),
     adminTemplate: path.resolve(__dirname, '../src/pages/admin/index.html'),
+
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/__STATIC_CDN_HOST__/',
+    // assetsPublicPath: '/__STATIC_CDN_HOST__/',
+    assetsPublicPath: ('/'),
+    // proxytable 추가
+    proxyTable: {
+      "/api": commonProxy,
+      "/public": commonProxy
+    },
+
     productionSourceMap: process.env.USE_SENTRY === '1',
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
@@ -33,7 +43,7 @@ module.exports = {
     // `npm run build --report`
     // Set to `true` or `false` to always turn it on or off
     bundleAnalyzerReport: process.env.npm_config_report
-  },
+  }, 
   dev: {
     env: require('./dev.env'),
     port: process.env.PORT || 8080,
